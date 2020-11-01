@@ -3,8 +3,8 @@ public class SuperArray{
 	private String[] data;
 	private int size;
 
-	public SuperArray() {
-		this.size = 10;
+	public SuperArray(int size) {
+		this.size = size;
 	}
 
 	public int size() {
@@ -12,13 +12,23 @@ public class SuperArray{
 	}
 
 	public boolean add(String element) {
-		String[] temp = new String[data.length+1];
-		for (int i = 0; i < data.length; i++) {
+		String[] temp = new String[size+1];
+		for (int i = 0; i < size; i++) {
 			temp[i] = data[i];
 		}
 		temp[temp.length-1] = element;
 		this.data = temp;
+		this.size = size++;
 		return true;
+	}
+
+	public String get(int index) {
+		if (index < size) {
+			return data[index];
+		}
+		else {
+			return "faulty index: please provide appropriate index";
+		}
 	}
 
 }
