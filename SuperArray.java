@@ -31,4 +31,12 @@ public class SuperArray{
 		}
 	}
 
+	public String set(int index, String element) {
+		String val = this.get(index);
+		if (index < size) {
+			data[index] = element;
+		}
+		return val;
+	}
+
 }
