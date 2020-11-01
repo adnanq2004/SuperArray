@@ -42,4 +42,12 @@ public class SuperArray{
 		return val;
 	}
 
+	private void resize() {
+		String[] temp = new String[data.length + 1];
+		for (int i = 0; i < data.length(); i++) {
+                        temp[i] = data[i];
+                }
+		data = temp;
+	}
+
 }
