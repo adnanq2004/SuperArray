@@ -16,8 +16,8 @@ public class SuperArray{
 		if (size == data.length - 1) {
 			this.resize();
 		}
-		data[data.length - 1] = element;
-		this.size = size++;
+		data[size] = element;
+		size++;
 		return true;
 	}
 
