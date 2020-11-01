@@ -3,8 +3,9 @@ public class SuperArray{
 	private String[] data;
 	private int size;
 
-	public SuperArray(int size) {
-		this.size = size;
+	public SuperArray() {
+		this.data = new String[10];
+		this.size = 0;
 	}
 
 	public int size() {
@@ -12,12 +13,14 @@ public class SuperArray{
 	}
 
 	public boolean add(String element) {
-		String[] temp = new String[size+1];
-		for (int i = 0; i < size; i++) {
-			temp[i] = data[i];
+		if (size == data.length - 1) {
+			String[] temp = new String[data.length + 1];
+			for (int i = 0; i < data.length; i++) {
+				temp[i] = data[i];
+			}
+			data = temp;
 		}
-		temp[temp.length-1] = element;
-		this.data = temp;
+		data[data.length - 1] = element;
 		this.size = size++;
 		return true;
 	}
