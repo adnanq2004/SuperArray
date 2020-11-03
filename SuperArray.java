@@ -87,6 +87,11 @@ public class SuperArray{
 		data = temp;
 	}
 
+	public void clear() {
+		data = new SuperArray(data.length);
+		size = 0;
+	}
+
 	public void add(int index, String element) {
 		if (size == data.length) {
 			resize();
@@ -120,6 +125,16 @@ public class SuperArray{
 		}
 		data = temp;
 		this.size--;
+		return val;
+	}
+
+	public int indexOf(String s) {
+		int val = -1;
+		for (int i = 0; i < size && val == -1; i++) {
+			if (get(i).equals(s)) {
+				val = i;
+			}
+		}
 		return val;
 	}
 
