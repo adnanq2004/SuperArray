@@ -5,6 +5,17 @@ public class SuperArray{
 
 	public SuperArray() {
 		this.data = new String[10];
+		for (int i = 0; i < data.length; i++) {
+			data[i] = null;
+		}
+		this.size = 0;
+	}
+	
+	public SuperArray(int initialCapacity) {
+		this.data = new String[initialCapacity];
+		for (int i = 0; i < data.length; i++) {
+                        data[i] = null;
+                }
 		this.size = 0;
 	}
 
@@ -13,7 +24,7 @@ public class SuperArray{
 	}
 
 	public boolean add(String element) {
-		if (size == data.length - 1) {
+		if (size == data.length) {
 			this.resize();
 		}
 		data[size] = element;
@@ -39,8 +50,8 @@ public class SuperArray{
 	}
 
 	private void resize() {
-		String[] temp = new String[data.length + 1];
-		for (int i = 0; i < data.length; i++) {
+		String[] temp = new String[data.length * 2 + 1];
+		for (int i = 0; i < size; i++) {
                         temp[i] = data[i];
                 }
 		data = temp;
