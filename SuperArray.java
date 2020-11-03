@@ -41,6 +41,33 @@ public class SuperArray{
 		}
 	}
 
+	public boolean isEmpty() {
+		return size == 0;
+	}
+
+	public String toString() {
+		String val = "[";
+		for (int i = 0; i < size; i++) {
+			if (i != size - 1) {
+				val += data[i];
+				val += ", ";
+			}
+			else {
+				val += data[i];
+				val += "]";
+			}
+		}
+		return val;
+	}
+
+	public boolean contains(String s) {
+		boolean val = false;
+		for (int i = 0; i < size && !val; i++) {
+			val = get(i).equals(s);
+		}
+		return val;
+	}
+
 	public String set(int index, String element) {
 		String val = this.get(index);
 		if (index < size) {
@@ -54,7 +81,46 @@ public class SuperArray{
 		for (int i = 0; i < size; i++) {
                         temp[i] = data[i];
                 }
+		for (int i = size; i < temp.length; i++) {
+			temp[i] = null;
+		}
 		data = temp;
+	}
+
+	public void add(int index, String element) {
+		if (size == data.length) {
+			resize();
+		}
+		String[] temp = new String[data.length];
+		for (int i = 0; i < index; i++) {
+			temp[i] = get(i);
+		}
+		temp[index] = element;
+		for (int i = index; i < size + 1; i++) {
+			temp[i+1] = get(i);
+		}
+		for (int i = size+1; i < temp.length; i++) {
+			temp[i] = null;
+		}
+		this.size++;
+		data = temp;
+	}
+
+	public String remove(int index) {
+		String val = get(index);
+		String[] temp = new String[data.length];
+		for (int i = 0; i < index; i++) {
+			temp[i] = get(i);
+		}
+		for (int i = index; i < size; i++) {
+			temp[i] = get(i+1);
+		}
+		for (int i = size; i < temp.length; i++) {
+			temp[i] = null;
+		}
+		data = temp;
+		this.size--;
+		return val;
 	}
 
 }
