@@ -88,7 +88,9 @@ public class SuperArray{
 	}
 
 	public void clear() {
-		data = new SuperArray(data.length);
+		for (int i = 0; i < data.length; i++) {
+			data[i] = null;
+		}
 		size = 0;
 	}
 
@@ -134,6 +136,14 @@ public class SuperArray{
 			if (get(i).equals(s)) {
 				val = i;
 			}
+		}
+		return val;
+	}
+
+	public String[] toArray() {
+		String[] val = new String[size];
+		for (int i = 0; i < size; i++) {
+			val[i] = get(i);
 		}
 		return val;
 	}
