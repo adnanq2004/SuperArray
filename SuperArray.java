@@ -160,4 +160,12 @@ public class SuperArray{
 		return val;
 	}
 
+	public boolean equals(SuperArray other) {
+		boolean val = true;
+		for (int i = 0; i < size && val; i++) {
+			val = (get(i) == other.get(i));
+		}
+		return val;
+	}
+
 }
