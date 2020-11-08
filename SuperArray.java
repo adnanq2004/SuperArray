@@ -49,7 +49,7 @@ public class SuperArray{
 		String val = "[";
 		for (int i = 0; i < size; i++) {
 			if (i != size - 1) {
-				val += data[i];
+				val +=  data[i];
 				val += ", ";
 			}
 			else {
@@ -144,6 +144,18 @@ public class SuperArray{
 		String[] val = new String[size];
 		for (int i = 0; i < size; i++) {
 			val[i] = get(i);
+		}
+		return val;
+	}
+
+
+	public int lastIndexOf(String value) {
+		int val = -1;
+		for (int i = size - 1; i >= 0; i--) {
+			if (get(i).equals(value)) {
+				val = i;
+				return val;
+			}
 		}
 		return val;
 	}
