@@ -8,15 +8,15 @@ public class Demo{
                 }
         }
 
-        public static void findOverlap(SuperArray a, SuperArray b) {
+        public static SuperArray findOverlap(SuperArray a, SuperArray b) {
                 SuperArray val = new SuperArray(1);
                 for (int i = 0; i < a.size(); i++) {
                         if (b.contains(a.get(i)) && !val.contains(a.get(i))) {
                                 val.add(a.get(i));
                         }
                 }
-                System.out.println(val.toString());
-        }
+        	return val;
+	}
 
 	public static SuperArray zip(SuperArray a, SuperArray b) {
 		SuperArray val = new SuperArray(0);
