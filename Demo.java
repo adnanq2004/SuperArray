@@ -52,7 +52,7 @@ public class Demo{
                 words.add("una");    words.add("ebi");     words.add("toro");
                 System.out.println(words);
                 removeDuplicates(words);
-                System.out.println(words.toArray()); */
+                System.out.println(words.toArray());
                 SuperArray a = new SuperArray(6);
                 SuperArray b = new SuperArray(4);
                 a.add("a");
@@ -66,7 +66,7 @@ public class Demo{
                 b.add("2");
                 b.add("3");
                 System.out.println(zip(a,b).toString());
-		
+		*/
 	}
 
 }
