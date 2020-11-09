@@ -48,15 +48,12 @@ public class SuperArray{
 	public String toString() {
 		String val = "[";
 		for (int i = 0; i < size; i++) {
+			val += data[i];
 			if (i != size - 1) {
-				val +=  data[i];
 				val += ", ";
 			}
-			else {
-				val += data[i];
-				val += "]";
-			}
 		}
+		val += "]";
 		return val;
 	}
 
@@ -163,7 +160,7 @@ public class SuperArray{
 	public boolean equals(SuperArray other) {
 		boolean val = true;
 		for (int i = 0; i < size && val; i++) {
-			val = (get(i) == other.get(i));
+			val = (this.get(i).equals(other.get(i)));
 		}
 		return val;
 	}
