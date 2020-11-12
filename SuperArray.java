@@ -36,6 +36,12 @@ public class SuperArray{
 	}
 
 	public String get(int index) {
+		if (index < 0) {
+			throw new IllegalArgumentException("index " + index + " cannot be negative");
+		}
+		if (index > size) {
+			throw new IllegalArgumentException("index " + index + " cannot be greater than size");
+		}
 		if (index < size) {
 			return data[index];
 		}
