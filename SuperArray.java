@@ -39,7 +39,7 @@ public class SuperArray{
 		if (index < 0) {
 			throw new IllegalArgumentException("index " + index + " cannot be negative");
 		}
-		if (index > size) {
+		if (index > this.size) {
 			throw new IllegalArgumentException("index " + index + " cannot be greater than size");
 		}
 		if (index < size) {
@@ -75,6 +75,12 @@ public class SuperArray{
 	}
 
 	public String set(int index, String element) {
+		if (index < 0) {
+                        throw new IllegalArgumentException("index " + index + " cannot be negative");
+                }
+                if (index > this.size) {
+                        throw new IllegalArgumentException("index " + index + " cannot be greater than size");
+                }
 		String val = this.get(index);
 		if (index < size) {
 			data[index] = element;
