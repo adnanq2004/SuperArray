@@ -13,7 +13,7 @@ public class SuperArray{
 	
 	public SuperArray(int initialCapacity) {
 		if (initialCapacity < 0) {
-			throw new IllegalArgumentException("Initial Capacity " + initialCapacity + " cannot be negative");
+			throw new IndexOutOfBoundsException("Initial Capacity " + initialCapacity + " cannot be negative");
 		}
 		this.data = new String[initialCapacity];
 		for (int i = 0; i < data.length; i++) {
@@ -37,10 +37,10 @@ public class SuperArray{
 
 	public String get(int index) {
 		if (index < 0) {
-			throw new IllegalArgumentException("index " + index + " cannot be negative");
+			throw new IndexOutOfBoundsException("index " + index + " cannot be negative");
 		}
 		if (index > this.size) {
-			throw new IllegalArgumentException("index " + index + " cannot be greater than size");
+			throw new IndexOutOfBoundsException("index " + index + " cannot be greater than size");
 		}
 		if (index < size) {
 			return data[index];
@@ -76,10 +76,10 @@ public class SuperArray{
 
 	public String set(int index, String element) {
 		if (index < 0) {
-                        throw new IllegalArgumentException("index " + index + " cannot be negative");
+                        throw new IndexOutOfBoundsException("index " + index + " cannot be negative");
                 }
                 if (index > this.size) {
-                        throw new IllegalArgumentException("index " + index + " cannot be greater than size");
+                        throw new IndexOutOfBoundsException("index " + index + " cannot be greater than size");
                 }
 		String val = this.get(index);
 		if (index < size) {
@@ -107,6 +107,12 @@ public class SuperArray{
 	}
 
 	public void add(int index, String element) {
+		if (index < 0) {
+                        throw new IndexOutOfBoundsException("index " + index + " cannot be negative");
+                }
+                if (index > this.size) {
+                        throw new IndexOutOfBoundsException("index " + index + " cannot be greater than size");
+                }
 		if (size == data.length) {
 			resize();
 		}
