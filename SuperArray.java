@@ -39,8 +39,8 @@ public class SuperArray{
 		if (index < 0) {
 			throw new IndexOutOfBoundsException("index " + index + " cannot be negative");
 		}
-		if (index > this.size) {
-			throw new IndexOutOfBoundsException("index " + index + " cannot be greater than size");
+		if (index >= this.size) {
+			throw new IndexOutOfBoundsException("index " + index + " cannot be greater than or equal to size");
 		}
 		if (index < size) {
 			return data[index];
@@ -78,8 +78,8 @@ public class SuperArray{
 		if (index < 0) {
                         throw new IndexOutOfBoundsException("index " + index + " cannot be negative");
                 }
-                if (index > this.size) {
-                        throw new IndexOutOfBoundsException("index " + index + " cannot be greater than size");
+                if (index >= this.size) {
+                        throw new IndexOutOfBoundsException("index " + index + " cannot be greater than or equal to size");
                 }
 		String val = this.get(index);
 		if (index < size) {
@@ -135,8 +135,8 @@ public class SuperArray{
 		if (index < 0) {
                         throw new IndexOutOfBoundsException("index " + index + " cannot be negative");
                 }
-                if (index > this.size) {
-                        throw new IndexOutOfBoundsException("index " + index + " cannot be greater than size");
+                if (index >= this.size) {
+                        throw new IndexOutOfBoundsException("index " + index + " cannot be greater than or equal to size");
                 }
 		String val = get(index);
 		String[] temp = new String[data.length];
